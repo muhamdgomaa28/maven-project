@@ -14,6 +14,7 @@ stages{
         stage('Build'){
              steps {
                                 sh 'mvn clean package'
+                                sh "docker build . -t tomcatWebApp:${env.BUILD_ID}"
                             }
 //             steps {
 //                 sh 'mvn clean package'
