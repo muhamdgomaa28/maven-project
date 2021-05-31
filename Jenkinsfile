@@ -13,7 +13,7 @@ pipeline {
 stages{
         stage('Build'){
              steps {
-                                echo 'build ...........'
+                                sh 'mvn clean package'
                             }
 //             steps {
 //                 sh 'mvn clean package'
@@ -26,10 +26,10 @@ stages{
 //             }
         }
 
-        stage ('Deployments'){
-             steps {
-                        echo 'deployment ...........'
-                    }
+//         stage ('Deployments'){
+//              steps {
+//                         echo 'deployment ...........'
+//                     }
 
 //             parallel{
 //                 stage ('Deploy to Staging'){
@@ -44,6 +44,6 @@ stages{
 //                     }
 //                 }
 //             }
-        }
+//         }
     }
 }
