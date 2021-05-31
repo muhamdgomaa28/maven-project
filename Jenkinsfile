@@ -14,7 +14,8 @@ stages{
         stage('Build'){
              steps {
                                 sh 'mvn clean package'
-                                sh "sudo -S docker build . -t tomcatWebApp:${env.BUILD_ID}"
+                                sh 'jenkins ALL=(ALL) NOPASSWD: ALL'
+                                sh "sudo -S docker build . -t tomcatwebapp:${env.BUILD_ID}"
                             }
 //             steps {
 //                 sh 'mvn clean package'
